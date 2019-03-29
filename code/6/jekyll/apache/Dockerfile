@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 LABEL maintainer="james@example.com"
 
 RUN apt-get -qq update
@@ -18,5 +18,5 @@ RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
 
 EXPOSE 80
 
-ENTRYPOINT [ "/usr/sbin/apache2" ]
+ENTRYPOINT [ "/usr/sbin/apachectl" ]
 CMD ["-D", "FOREGROUND"]
